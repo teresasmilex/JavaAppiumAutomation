@@ -1,11 +1,22 @@
 import org.junit.Assert;
 import org.junit.Test;
 
-public class MainClassTest {
+public class MainClassTest extends MainClass {
     @Test
     public void testGetLocalNumber() {
-        MainClass mainClass = new MainClass();
-        int localNumber = mainClass.getLocalNumber();
+        int localNumber = this.getLocalNumber();
         Assert.assertEquals("The local number should be 14", 14, localNumber);
+    }
+
+    @Test
+    public void testGetClassNumber() {
+        int classNumber = this.getClassNumber();
+        if (classNumber == 45) {
+            Assert.fail("Class number is 45, should be more than 45");
+        } else if (classNumber < 45) {
+            Assert.fail("Class number is less than 45, should be more than 45");
+        } else {
+            Assert.assertTrue(true);
+        }
     }
 }
