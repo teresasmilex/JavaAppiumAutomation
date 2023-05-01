@@ -19,4 +19,11 @@ public class MainClassTest extends MainClass {
             Assert.assertTrue(true);
         }
     }
+
+    @Test
+    public void testGetClassString() {
+        String classString = this.getClassString();
+        Assert.assertTrue("Class string doesn't contain 'Hello' or 'hello'",
+                classString.contains("hello") || classString.contains("Hello"));
+    }
 }
